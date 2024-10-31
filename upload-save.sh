@@ -5,7 +5,7 @@ CONTAINERS=("beginner-server_begginer-core-keeper_1" "secondary-server_secondary
 # Caminho do arquivo dentro dos containers
 SOURCE_PATH="/home/steam/core-keeper-data/worlds/0.world.gzip"
 # Diretório de destino no host
-BASE_DESTINATION_PATH="./"
+BASE_DESTINATION_PATH="./worlds/"
 
 # Loop através da lista de containers
 for CONTAINER_NAME in "${CONTAINERS[@]}"; do
