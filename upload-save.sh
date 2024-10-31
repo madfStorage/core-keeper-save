@@ -7,6 +7,8 @@ SOURCE_PATH="/home/steam/core-keeper-data/worlds/0.world.gzip"
 # Diretório de destino no host
 BASE_DESTINATION_PATH="/root/core-keeper-save/worlds"
 
+REPOSITORY_DIR=$(pwd)
+
 # Loop através da lista de containers
 for CONTAINER_NAME in "${CONTAINERS[@]}"; do
     echo "Copiando de $CONTAINER_NAME..."
@@ -20,6 +22,7 @@ for CONTAINER_NAME in "${CONTAINERS[@]}"; do
 
     # Verifica se a cópia foi bem-sucedida
     if [ $? -eq 0 ]; then
+        cd $REPOSITORY_DIR
         echo "Arquivo copiado com sucesso de $CONTAINER_NAME para $DESTINATION_PATH"
         git add . 
         git commit -m "save updated"
